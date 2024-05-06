@@ -34,7 +34,7 @@
   */
 
 #define HAL_MODULE_ENABLED
-  #define HAL_ADC_MODULE_ENABLED
+  /*#define HAL_ADC_MODULE_ENABLED   */
 /*#define HAL_CRYP_MODULE_ENABLED   */
 /*#define HAL_CAN_MODULE_ENABLED   */
 /*#define HAL_CAN_LEGACY_MODULE_ENABLED   */
@@ -62,9 +62,9 @@
 /*#define HAL_MMC_MODULE_ENABLED   */
 /*#define HAL_SDRAM_MODULE_ENABLED   */
 /*#define HAL_SMARTCARD_MODULE_ENABLED   */
-#define HAL_SPI_MODULE_ENABLED
+/*#define HAL_SPI_MODULE_ENABLED   */
 /*#define HAL_SRAM_MODULE_ENABLED   */
-#define HAL_TIM_MODULE_ENABLED
+/*#define HAL_TIM_MODULE_ENABLED   */
 /*#define HAL_UART_MODULE_ENABLED   */
 /*#define HAL_USART_MODULE_ENABLED   */
 /*#define HAL_WWDG_MODULE_ENABLED   */
@@ -129,7 +129,7 @@
   * @brief This is the HAL system configuration section
   */
 #define  VDD_VALUE                    3300U /*!< Value of VDD in mv */
-#define  TICK_INT_PRIORITY            15U    /*!< tick interrupt priority (lowest by default)  */
+#define  TICK_INT_PRIORITY            5U    /*!< tick interrupt priority (lowest by default)  */
 #define  USE_RTOS                     0U
 #define  PREFETCH_ENABLE              1U
 
