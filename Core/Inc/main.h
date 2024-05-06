@@ -32,6 +32,9 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "USER.h"
+#include "stdio.h"
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -60,6 +63,8 @@ void Error_Handler(void);
 #define BUT_S_Pin GPIO_PIN_4
 #define BUT_S_GPIO_Port GPIOB
 #define BUT_S_EXTI_IRQn EXTI4_IRQn
+#define BEE_Pin GPIO_PIN_5
+#define BEE_GPIO_Port GPIOB
 #define LED_Pin GPIO_PIN_8
 #define LED_GPIO_Port GPIOB
 #define BUT_M_Pin GPIO_PIN_9

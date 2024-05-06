@@ -102,19 +102,18 @@ int main(void)
 		//state machine
 		switch (state) {
 
-			//send signal
+			//manual send signal
 			case 1:
-				if (HAL_GPIO_ReadPin(GPIOB, BUT_S_Pin) == GPIO_PIN_RESET) {
-					//turn on LED
-					HAL_GPIO_WritePin(GPIOB, LED_Pin, GPIO_PIN_RESET);
-				}
-				else {
-					//turn off LED
-					HAL_GPIO_WritePin(GPIOB, LED_Pin, GPIO_PIN_SET);
-				}
+				Manual_Signal();
 				break;
 
+			//auto send signal
 			case 2:
+
+				break;
+
+			//date transfer
+			case 3:
 
 				break;
 		}
@@ -166,12 +165,14 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
-void HAL_EXTI_Callback(uint16_t GPIO_Pin) {
+//button mode switch
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 	if (GPIO_Pin == BUT_M_Pin) {
 		state++;
 		if (state == 3) {
 			state = 0;
 		}
+		BEE_Delay(50);
 	}
 }
 
