@@ -18,7 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "i2c.h"
+#include "tim.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -45,7 +45,7 @@
 
 /* USER CODE BEGIN PV */
 
-uint8_t state = 0;
+uint8_t state = 1;
 
 /* USER CODE END PV */
 
@@ -88,7 +88,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_I2C1_Init();
+  MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
 
 	//init
@@ -101,6 +101,11 @@ int main(void)
 	while (1) {
 		//state machine
 		switch (state) {
+			//debug
+			case 0:
+				HAL_GPIO_WritePin(GPIOB, LED_Pin, GPIO_PIN_RESET);
+				HAL_GPIO_WritePin(GPIOB, LED_R_Pin, GPIO_PIN_SET);
+				break;
 
 			//manual send signal
 			case 1:

@@ -65,6 +65,8 @@ void Error_Handler(void);
 #define BUT_S_EXTI_IRQn EXTI4_IRQn
 #define BEE_Pin GPIO_PIN_5
 #define BEE_GPIO_Port GPIOB
+#define LED_R_Pin GPIO_PIN_6
+#define LED_R_GPIO_Port GPIOB
 #define LED_Pin GPIO_PIN_8
 #define LED_GPIO_Port GPIOB
 #define BUT_M_Pin GPIO_PIN_9
