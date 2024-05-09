@@ -27,8 +27,15 @@ void Manual_Signal(void) {
 	}
 }
 
+
+/**
+ * @brief Auto send morse code
+ * 			0: break 1: dot 2: dash 3: space 4: end
+ * 			and this part of code is for XS018 and SOS
+ * **/
 void Auto_Morse_Signal(uint8_t* Trans_Msg) {
 	//auto send signal
+	//0: break 1: dot 2: dash 3: space 4: end
 	for (int i = 0; i < 256; ++i) {
 		switch (Trans_Msg[i]) {
 			case 0: //break
@@ -40,16 +47,16 @@ void Auto_Morse_Signal(uint8_t* Trans_Msg) {
 			case 2: //dash
 				Morse_Send_Dash();
 				break;
-			case 3: //space
+			case 3: //space & end
 				Morse_Send_Space();
 				break;
 			case 4: //end
-				break;
+				return;
 		}
 	}
 
 }
-
+//morse code send assist
 void Morse_Send_Dot(void) {
 	//send dot
 	HAL_GPIO_WritePin(GPIOB, LED_Pin, GPIO_PIN_RESET);
@@ -61,7 +68,6 @@ void Morse_Send_Dot(void) {
 	HAL_GPIO_WritePin(GPIOB, BEE_Pin, GPIO_PIN_SET);
 	HAL_Delay(100);
 }
-
 void Morse_Send_Dash(void) {
 	//send dash
 	HAL_GPIO_WritePin(GPIOB, LED_Pin, GPIO_PIN_RESET);
@@ -73,11 +79,9 @@ void Morse_Send_Dash(void) {
 	HAL_GPIO_WritePin(GPIOB, BEE_Pin, GPIO_PIN_SET);
 	HAL_Delay(100);
 }
-
 void Morse_Send_Break(void) {
 	HAL_Delay(200);
 }
-
 void Morse_Send_Space(void) {
 	HAL_Delay(600);
 }

@@ -12,6 +12,7 @@
 void BEE_Delay(uint8_t time);
 void Manual_Signal(void);
 
+void Auto_Morse_Signal(uint8_t* Trans_Msg);
 void Morse_Send_Dot(void);
 void Morse_Send_Dash(void);
 void Morse_Send_Break(void);
