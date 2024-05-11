@@ -17,3 +17,10 @@ void Morse_Send_Dot(void);
 void Morse_Send_Dash(void);
 void Morse_Send_Break(void);
 void Morse_Send_Space(void);
+
+void FibreTran_0(void);
+void FibreTran_1(void);
+void FibreTran_Start(void);
+void FibreTran_End(void);
+void FibreTran_DATA(uint8_t data);
+void FibreTran_Pic(uint8_t* data);
